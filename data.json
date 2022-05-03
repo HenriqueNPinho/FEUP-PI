@@ -1,0 +1,38 @@
+{
+    "mesa1":{
+       "sensor":[
+          "detected",
+          "not detected"
+       ],
+       "name":"NADA"
+    },
+    "mesa2":{
+       "sensor":[
+          "detected",
+          "not detected"
+       ],
+       "name":"CINF / PROFDEI / MCI"
+    },
+    "mesa3":{
+       "sensor":[
+          "detected",
+          "not detected"
+       ],
+       "name":"MM / PDMD"
+    },
+    "mesa4":{
+       "sensor":[
+          "detected",
+          "not detected"
+       ],
+       "name":"MESW / MECD"
+    },
+    "mesa5":{
+       "sensor":[
+          "detected",
+          "not detected"
+       ],
+       "name":"MEIC / LEIC"
+    }
+ }
+ 
