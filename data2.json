@@ -1,0 +1,7 @@
+{"leic":[
+   {"mesa":"1","sensor": "detected", "name": "NADA"},
+   {"mesa":"2","sensor": "detected", "name": "CINF / PROFDEI / MCI"},
+   {"mesa":"3","sensor": "detected", "name": "MM / PDMD"},
+   {"mesa":"4","sensor": "detected", "name": "MESW / MECD"},
+   {"mesa":"5","sensor": "detected", "name": "MEIC / LEIC"}
+   ]}
