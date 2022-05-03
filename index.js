@@ -25,4 +25,6 @@ function rquestRanking(request,response){
   });
 }
 
-server.listen(8141);
+server.listen(8141,() => {
+  console.log(`Server running at http://localhost:8141/`);
+});;
