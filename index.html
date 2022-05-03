@@ -9,38 +9,18 @@
 </head>
 
 <body>
-  <script src="index.js"></script>
-  <script src="script.js"></script>
 <h1> HEllo CARALHO</h1>
 <ul>
-<li id="mesa1">  MESA 1 </li>
-<li id="mesa2"> MESA 2 </li>
-<li id="mesa3">  MESA 3</li>
-<li id="mesa4">  MESA 4</li>
-<li id="mesa5"> MESA 5</li>
-
-
+  <li id="mesa1">  MESA 1 </li>
+  <li id="mesa2"> MESA 2 </li>
+  <li id="mesa3">  MESA 3</li>
+  <li id="mesa4">  MESA 4</li>
+  <li id="mesa5"> MESA 5</li>
 </ul>
+
+<script src="script.js" ></script>
 </body>
-<script>
-  
-var tables=["mesa1", "mesa2", "mesa3", "mesa4", "mesa5"]
-var colors=["green", "yellow", "yellow", "green", "red"]
+</html>
 
-window.onload = changeColor(tables, colors)
 
-function changeColor(mesas, colors) {
-    // your code here
-    function leftLight() {
 
-      for(let i = 0; i<mesas.length;i++){
-        var element = document.getElementById(tables[i]);
-        element.style["color"] = colors[i];
-      }
-
-    }
-    // Also don't forget to call the function
-    leftLight();
-}
-
-</script>
