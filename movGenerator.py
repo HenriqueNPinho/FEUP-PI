@@ -1,8 +1,10 @@
 import json
 import time
 import random
+import sys
+import requests
 
-with open('data1.json', 'r+') as f:
+with open('data.json', 'r+') as f:
     data = json.load(f)
     sensor = ["detected", "not detected", "away"]
     mesa = [1, 2, 3, 4, 5]

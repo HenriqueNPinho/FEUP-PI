@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title> Departamento de Engenharia Informática e Computação </title>
   <link href="style.css" rel="stylesheet" id="stylesheet">
+  <meta http-equiv="refresh" content="5" >
 </head>
 
 <body>
@@ -18,9 +19,11 @@
 <li id="mesa4">  MESA 4</li>
 <li id="mesa5"> MESA 5</li>
 
+
 </ul>
 </body>
 <script>
+  
 var tables=["mesa1", "mesa2", "mesa3", "mesa4", "mesa5"]
 var colors=["green", "yellow", "yellow", "green", "red"]
 
@@ -34,9 +37,10 @@ function changeColor(mesas, colors) {
         var element = document.getElementById(tables[i]);
         element.style["color"] = colors[i];
       }
-    }
 
+    }
     // Also don't forget to call the function
     leftLight();
 }
+
 </script>
