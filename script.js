@@ -1,8 +1,11 @@
+
+
 var tables=["mesa1", "mesa2", "mesa3", "mesa4", "mesa5"]
 var colors=["green", "yellow", "yellow", "green", "red"]
 
-function changeColor(tables, colors) {
+window.addEventListener("load", function()  {
     // your code here
+    readJson()
     function leftLight() {
 
       for(let i = 0; i<tables.length;i++){
@@ -13,4 +16,15 @@ function changeColor(tables, colors) {
     }
     // Also don't forget to call the function
     leftLight();
-} 
+}, false);
+
+function readJson(){
+  fetch("./data.json")
+.then(response => {
+   return response.json();
+})
+.then(data => console.log(data));
+//const json = require('./data.json')
+//console.log(json)
+
+}

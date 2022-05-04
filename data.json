@@ -1,1 +1,1 @@
-{"mesa1": {"sensor": "detected", "name": "NADA"}, "mesa2": {"sensor": "not detected", "name": "CINF / PROFDEI / MCI"}, "mesa3": {"sensor": "away", "name": "MM / PDMD"}, "mesa4": {"sensor": "away", "name": "MESW / MECD"}, "mesa5": {"sensor": "away", "name": "MEIC / LEIC"}}
+{"mesa1": {"sensor": "away", "name": "NADA"}, "mesa2": {"sensor": "not detected", "name": "CINF / PROFDEI / MCI"}, "mesa3": {"sensor": "not detected", "name": "MM / PDMD"}, "mesa4": {"sensor": "away", "name": "MESW / MECD"}, "mesa5": {"sensor": "detected", "name": "MEIC / LEIC"}}
