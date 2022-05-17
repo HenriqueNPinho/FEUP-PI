@@ -1,8 +1,6 @@
 import json
 import time
 import random
-import sys
-import requests
 
 with open('data.json', 'r+') as f:
     data = json.load(f)
