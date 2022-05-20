@@ -20,7 +20,7 @@ To install JSON Server:
 
 * **sudo npm install -g json-server**
 
-**Note:** If the command above returns some version errors use the following commands:
+**Note:** If the command above returns version errors use the following commands:
 
 * **sudo npm install n -g**
 * **sudo n stable**

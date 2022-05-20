@@ -55,5 +55,3 @@ const renderLeic = async () =>{
     document.getElementById("test_4").innerHTML = template;
     document.getElementById("test_5").innerHTML = template5;
 }
-
-window.addEventListener ('DOMContentLoaded', renderLeic());
