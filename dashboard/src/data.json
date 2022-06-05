@@ -1,0 +1,9 @@
+{
+  "leic": [
+    { "mesa": "1", "sensor": "Ocupado", "name": "NADA" },
+    { "mesa": "2", "sensor": "Ocupado", "name": "CINF / PROFDEI / MCI" },
+    { "mesa": "3", "sensor": "Ocupado", "name": "MM / PDMD" },
+    { "mesa": "4", "sensor": "Livre", "name": "MESW / MECD" },
+    { "mesa": "5", "sensor": "Livre", "name": "MEIC / LEIC" }
+  ]
+}
