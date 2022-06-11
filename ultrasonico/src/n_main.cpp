@@ -9,17 +9,17 @@
 //#include <M5Atom.h>
 //#include <FastLED.h>
 #include <stack>
-#include<iostream>
-#include <thread>         
-#include <chrono> 
+#include <iostream>
+#include <unistd.h> 
 using namespace std;
 
 
 int state = FILLING;
 stack<int> pilha;
- int test_counter=0;
- int tries=TRIES;
-
+int test_counter=0;
+int tries=TRIES;
+const int microToSeconds = 1000000;   
+const double delay1 = 1 * microToSeconds;     
 
 /*
 void setup () {
@@ -124,8 +124,6 @@ void setup () {
       
       //M5.update();
       */
-      //delay(1000);
-      std::this_thread::sleep_for (std::chrono::seconds(1));
       return 1;
   }
 
@@ -159,6 +157,7 @@ int main(){
     //consoante o seu valor dar publish da respetiva mensagem
     //usar current_state como input para a função de publish
     table_state(current_state);
+    usleep(delay1); 
   }
   return 1;
 }
