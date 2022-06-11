@@ -10,50 +10,17 @@ setInterval(refreshTime, 1000);
 
 function renderLeic(message) {
   secretaria = JSON.parse(message);
+  console.log(secretaria);
+  console.log(secretaria.mesa);
   let template = '';
-  let template5 = '';
 
-  for (var i = 0; i < 5; i++) {
-    if (secretaria.leic[i].mesa == "5") {
-      template5 += `
-            <div class="mesa_5">
-                <div class="text">
-                    <h2 class="mesa_titulo"> Mesa ${secretaria.leic[i].mesa} </h2>
-                    <h4 class="name"> ${secretaria.leic[i].name} </h4>
-                </div>
-            `;
-      if (secretaria.leic[i].sensor == "Livre") {
-        template5 += `
-                <p class="estado_green"> ${secretaria.leic[i].sensor} </p>
-            </div>
-            `;
-      } else {
-        template5 += `
-                <p class="estado_red"> ${secretaria.leic[i].sensor} </p>
-            </div>
-            `;
-      }
-    } else {
-      template += `
-            <div class="mesa">
-                <div class="text">
-                    <h2 class="mesa_titulo"> Mesa ${secretaria.leic[i].mesa} </h2>
-                    <h4 class="name"> ${secretaria.leic[i].name} </h4>
-                </div>
-            `;
-      if (secretaria.leic[i].sensor == "Livre") {
-        template += `
-                <p class="estado_green"> ${secretaria.leic[i].sensor} </p>
-            </div>
-            `;
-      } else {
-        template += `
-                <p class="estado_red"> ${secretaria.leic[i].sensor} </p>
-            </div>
-            `;
-      }
-    }
+  if (secretaria.sensor == "Livre") {
+    template += `<p class="estado_green"> ${secretaria.sensor} </p>`;
+  } else {
+    template += `<p class="estado_red"> ${secretaria.sensor} </p>`;
   }
-  document.getElementById("test_4").innerHTML = template;
-  document.getElementById("test_5").innerHTML = template5;
+
+  var element = "led"+secretaria.mesa;
+  console.log(element);
+  document.getElementById(element).innerHTML = template;
 }
