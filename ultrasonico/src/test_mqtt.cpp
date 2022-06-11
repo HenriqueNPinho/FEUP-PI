@@ -1,8 +1,8 @@
-#include <WiFi.h>
+/* #include <WiFi.h>
 #include <PubSubClient.h>
 
-const char *ssid = "Vodafone-92685F";
-const char *pass = "metro296";
+const char *ssid = "THOMSONC15130";
+const char *pass = "81C1BBF76C";
 
 const char *broker = "broker.mqttdashboard.com";
 const int port = 8000;
@@ -60,4 +60,4 @@ void loop()
     }
     client.loop();
     client.publish("secretaria", '{ "mesa": "2", "sensor": "Livre" }');
-}
+} */
