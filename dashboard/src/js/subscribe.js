@@ -2,6 +2,8 @@ mqtt_server = "broker.mqttdashboard.com";
 mqtt_port = 8000;
 mqtt_destname = "secretaria";
 
+window.onload = sub_mqtt_msg;
+
 function sub_mqtt_msg() {
   client = new Paho.MQTT.Client(mqtt_server, mqtt_port, "");
   client.onMessageArrived = onMessageArrived;
