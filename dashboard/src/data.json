@@ -1,0 +1,9 @@
+{
+  "leic": [
+    { "mesa": "1", "sensor": "Ocupado" },
+    { "mesa": "2", "sensor": "Ocupado"},
+    { "mesa": "3", "sensor": "Ocupado"},
+    { "mesa": "4", "sensor": "Livre"},
+    { "mesa": "5", "sensor": "Livre"}
+  ]
+}

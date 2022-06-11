@@ -19,7 +19,7 @@ body {
 .logo_container {
     width: 20%;
     margin: 10px;
-    float: right;
+    float: left;
 }
 
 .clock {
@@ -28,17 +28,17 @@ body {
     border-radius: 10px;
     border: 1px solid black;
     padding: 10px;
-    margin-right: 37px;
+    margin-left: 10px;
     margin-top: 20px;
     color: #fffcf2;
     font-size: 30px;
     text-align: center;
-    float: right;
+    float: left;
 }
 
 .mesa {
     height: 200px;
-    width: 22%;
+    width: 22.5%;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -49,11 +49,10 @@ body {
 }
 
 .mesa_5 {
-    float: right;
+    float: left;
     height: 200px;
     width: 22%;
     margin: 10px;
-    margin-right: 57px;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid black;
@@ -88,9 +87,22 @@ body {
     font-weight: bold;
 }
 
+.estado_grey {
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    background-color: grey;
+    padding: 3px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
 .logo_image {
     width: 450px;
     height: auto;
-    float: right;
+    float: left;
     margin-right: 37px;
 }
