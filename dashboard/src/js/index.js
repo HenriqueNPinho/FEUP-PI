@@ -11,16 +11,19 @@ setInterval(refreshTime, 1000);
 function renderLeic(message) {
   secretaria = JSON.parse(message);
   console.log(secretaria);
-  console.log(secretaria.mesa);
+  console.log(secretaria.desk);
   let template = '';
+  
+  let sensorPT = "Ocupado";
+  if(secretaria.sensor == "Free") sensorPT = "Livre";
 
-  if (secretaria.sensor == "Livre") {
-    template += `<p class="estado_green"> ${secretaria.sensor} </p>`;
+  if (secretaria.sensor == "Free") {
+    template += `<p class="estado_green"> ${sensorPT} </p>`;
   } else {
-    template += `<p class="estado_red"> ${secretaria.sensor} </p>`;
+    template += `<p class="estado_red"> ${sensorPT} </p>`;
   }
 
-  var element = "led"+secretaria.mesa;
+  var element = "led"+secretaria.desk;
   console.log(element);
   document.getElementById(element).innerHTML = template;
 }

@@ -6,13 +6,14 @@
 
   <script>
     // Define some MQTT variables
-    var mqtt_server = "broker.mqttdashboard.com";
+    var mqtt_server = "broker.hivemq.com";
     var mqtt_port = 8000;
-    var mqtt_destname = "secretaria";
+    var mqtt_destname = "feup/dei/secretaria";
+    const clientID = "web" + new Date().getTime();
 
     function send_mqtt_msg() {
       // Send an MQTT message
-      client = new Paho.MQTT.Client(mqtt_server, mqtt_port, "");
+      client = new Paho.MQTT.Client(mqtt_server, mqtt_port, clientID);
       client.connect({ onSuccess: onConnect });
       document.getElementById("pubmsg").innerHTML = "Trying to connect...";
     }
@@ -28,10 +29,9 @@
   </script>
   <body>
     <h1>MQTT Publish Test Page</h1>
-
-    Server Name: <input type="text" id="mqtt_server" value="broker.mqttdashboard.com"/><br /><br />
+    Server Name: <input type="text" id="mqtt_server" value="broker.hivemq.com"/><br /><br />
     Websocket: <input type="text" id="mqtt_port" value="8000" /><br /><br />
-    DestinationName: <input type="text" id="mqtt_destname" value="secretaria" /><br /><br />
+    DestinationName: <input type="text" id="mqtt_destname" value="feup/dei/secretaria" /><br /><br />
     Message: <input type="text" id="mqtt_msg" value="test message" /><br /><br />
     <button onclick="send_mqtt_msg()">Publish MQTT Message</button>
   </body>
