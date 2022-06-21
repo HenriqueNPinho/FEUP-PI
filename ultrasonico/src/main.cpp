@@ -4,20 +4,9 @@
 #include <FastLED.h>
 #include <stack>
 
-
-using namespace std;
-#define FILLING 0
-#define FULL 1
 #define Min_Value 5
 #define Max_Value 100
-#define TRUE 5
-#define TRIES 5
-#define CHECK_STATE 2
 
-stack<int> pilha;
-int state = FILLING;
-int test_counter=0;
-int tries=TRIES;
 int counter = 0;
 
 //-----------------------CODIGO SANTOS-----------------------------------------
@@ -25,40 +14,48 @@ int counter = 0;
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-const char *ssid = "net"; //substituir pela net
-const char *pass = "pass"; //substituir pela pass da net
+const char *ssid = "MEO-54B493-5G"; //substituir pela net
+const char *pass = "06D656029E"; //substituir pela pass da net
 
 const char *broker = "broker.mqttdashboard.com";
-const int port = 8000;
+const int port = 1883;
 
-#define clientId "clientId-1234"
+
 
 
 WiFiClient espClient;
 PubSubClient client(broker, port, espClient);
 
-void setupWifi()
-{
-    delay(100);
-    Serial.print("\nConnecting to");
-    Serial.println(ssid);
-    WiFi.begin(ssid, pass);
-    while (WiFi.status() != WL_CONNECTED)
-    {
-        delay(100);
-        Serial.print("-");
-    }
-    Serial.print("\nConnected to");
-    Serial.println(ssid);
+void setupWifi() {
+
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, pass);
+  Serial.print("Connecting to WiFi ..");
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print('.');
+    delay(1000);
+  }
+  Serial.println(WiFi.localIP());
+
 }
 
 void reconnect()
 {
+
+    uint64_t chipid=ESP.getEfuseMac();//The chip ID is essentially its MAC address(length: 6 bytes).
+    Serial.printf("ESP32 Chip ID = %04X\n",(uint16_t)(chipid>>32));//print High 2 bytes
+    //Serial.printf("%08X\n",(uint32_t)chipid);//print Low 4bytes.
+     Serial.println((uint16_t)(chipid>>32),HEX);
+      uint16_t chip = (uint16_t)(chipid>>32);
+      Serial.println(chip);
+      String up = (String)chip;
+      Serial.println(up);
+ 
     while (!client.connected())
     {
         Serial.print("\nConnecting to ");
         Serial.println(broker);
-        if (client.connect(clientId))
+        if (client.connect(up.c_str()))
         {
             Serial.print("\nConnected to ");
             Serial.println(broker);
@@ -97,11 +94,11 @@ void setup () {
 
 void loop () {
 
-  if (!client.connected())
+   if (!client.connected())
     {
         reconnect();
     }
-    client.loop();
+    client.loop(); 
     
     // Every 500 miliseconds, do a measurement using the sensor and print the distance in centimeters.
     int distance = distanceSensor.measureDistanceCm();
@@ -109,7 +106,6 @@ void loop () {
     Serial.print(distance);
     Serial.println("cm");
     int trigger = 0;
-    int trigger2 = 0;
 
     if (distance > Min_Value && distance < Max_Value) {
       //M5.dis.drawpix(0, 0xFF0000);
@@ -140,80 +136,15 @@ void loop () {
     if (counter == 5) {
       M5.dis.drawpix(0, 0xFF0000);
       Serial.println("ocupado");
-      client.publish("secretaria", "olaolaol");
+      client.publish("feup/dei/secretaria", "adasd");
     } 
 
     if (counter == 0) {
       M5.dis.drawpix(0, 0x00FF00);
       Serial.println("livre");
-      client.publish("secretaria", "adasdasd");
+      client.publish("feup/dei/secretaria", "sadasd");
     }
 
-     /* switch (state)
-      {
-      case FILLING:
-        if(trigger==1){
-          if(pilha.size()<5){
-            pilha.push(1);
-          }
-          int s = pilha.size();
-          //printf("Size: %d\n",s);
-          if (s==5){
-            state = FULL;
-            Serial.println("Ocupado");
-          }
-          Serial.println("Livre");
-        }
-        else {
-          while(!pilha.empty()) {
-            pilha.pop();
-
-          }
-          int s = pilha.size();
-          
-          Serial.println("Livre");
-        }
-        break;
-      
-      case FULL:
-
-        if(trigger !=1){
-          state = CHECK_STATE;
-          test_counter=0;
-          tries=TRIES;
-        }
-         Serial.println("Ocupado");
-        break;
-      
-      case CHECK_STATE :
-        
-        if(trigger ==1){
-          test_counter+=1;
-        }
-        tries-=1;
-        if (tries ==0){
-          if (test_counter>=0.75*TRIES){
-            state = FULL;
-             Serial.println("Ocupado");
-          }
-          else{
-            state = FILLING;
-            while(!pilha.empty()) {
-              pilha.pop();
-            }
-            Serial.println("Livre");
-          }
-        }
-         Serial.println("Ocupado");
-
-        break;
-
-      default:
-        break;
-      } */
-
-
-    //M5.update();
     delay(1000);
 }
 
