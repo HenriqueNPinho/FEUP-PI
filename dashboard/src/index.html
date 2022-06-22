@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Secretaria LEIC</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link />
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://kit.fontawesome.com/e8c9fa0384.js" crossorigin="anonymous"></script>
   </head>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"
-    type="text/javascript"
-  ></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
   <script src="js/subscribe.js" type="text/javascript"></script>
   <script src="js/index.js" type="text/javascript"></script>
 
@@ -25,7 +23,7 @@
             <h4 class="name"> Mesa 1 </h4>
 
             <div id="led1">
-              <p class="estado_green"> Livre </p>
+              <p class="estado_green"> <i class="fa-solid fa-circle-check fa-bounce" style="font-size:30px;color: #34ace0;"></i>  Livre </p>
             </div> 
 
             <h2 class="name"> Nada </h2>
@@ -37,7 +35,7 @@
               <h4 class="name"> Mesa 2 </h4>
 
               <div id="led2">
-                <p class="estado_green"> Livre </p>
+                <p class="estado_green"> <i class="fa-solid fa-circle-check fa-bounce" style="font-size:30px;color: #34ace0;"></i> Livre </p>
               </div> 
 
               <h2 class="name"> CINF / PROFDEI / MCI </h2>
@@ -49,7 +47,7 @@
               <h4 class="name"> Mesa 3 </h4>
 
               <div id="led3">
-                <p class="estado_green"> Livre </p>
+                <p class="estado_green"> <i class="fa-solid fa-circle-check fa-bounce" style="font-size:30px;color: #34ace0;"></i> Livre </p>
               </div> 
 
               <h2 class="name"> MM / PDMD </h2>
@@ -61,7 +59,7 @@
               <h4 class="name"> Mesa 4 </h4>
 
               <div id="led4">
-                <p class="estado_green"> Livre </p>
+                <p class="estado_green"> <i class="fa-solid fa-circle-check fa-bounce" style="font-size:30px;color: #34ace0;"></i> Livre </p>
               </div> 
 
               <h2 class="name"> MESW / MECD </h2>
@@ -70,37 +68,30 @@
     </div>
 
     <div class="container_left">
-      <div class="video">
-        <img
-          src="images/feup.jpeg"
-          alt="Faculdade de Engenharia da Universidade do Porto"
-          width="1379"
-          height="570"
-        />
-      </div>
+      <img class="video"
+      src="images/2068947.jpeg"
+      alt="Faculdade de Engenharia da Universidade do Porto"
+    />
       <div class="container_right">
-        <div id="test_5">
-          <div id="mesa5" class="mesa_5">
-            <div class="text">
-              <h4 class="name"> Mesa 5 </h4>
+        <div id="mesa5" class="mesa_5">
+          <div class="text">
+            <h4 class="name"> Mesa 5 </h4>
 
-              <div id="led5">
-                <p class="estado_green"> Livre </p>
-              </div> 
+            <div id="led5">
+              <p class="estado_green"> <i class="fa-solid fa-circle-check fa-bounce" style="font-size:30px;color: #34ace0;"></i> Livre </p>
+            </div> 
 
-              <h2 class="name"> MEIC / LEIC </h2>
-            </div>
+            <h2 class="name"> MEIC / LEIC </h2>
           </div>
         </div>
 
         <div class="logo_container">
-          <img src="images/feup_logo_remove.png" alt="FEUP logo" class="logo_image"/>
+          <img class="logo_image" src="images/feup_logo_remove.png" alt="FEUP logo"/>
           <div class="clock" id="time">
 
           </div>
         </div>
       </div>
     </div>
-    <div id="submsg"></div>
   </body>
 </html>
