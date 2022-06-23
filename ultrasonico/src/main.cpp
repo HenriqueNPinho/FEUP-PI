@@ -13,9 +13,10 @@ int counter = 0;
 
 #include <WiFi.h>
 #include <PubSubClient.h>
+#include <ArduinoJson.h>
 
-const char *ssid = "MEO-54B493-5G"; //substituir pela net
-const char *pass = "06D656029E"; //substituir pela pass da net
+const char *ssid = "tiago"; //substituir pela net
+const char *pass = "12345678ti"; //substituir pela pass da net
 
 const char *broker = "broker.mqttdashboard.com";
 const int port = 1883;
@@ -136,13 +137,31 @@ void loop () {
     if (counter == 5) {
       M5.dis.drawpix(0, 0xFF0000);
       Serial.println("ocupado");
-      client.publish("feup/dei/secretaria", "adasd");
+
+      char buffer[256];
+      DynamicJsonDocument doc(1024);
+
+      doc["desk"] = 1;
+      doc["sensor"]   = "Unavailable";
+
+      serializeJson(doc, buffer);
+
+      client.publish("feup/dei/secretaria", buffer);
     } 
 
     if (counter == 0) {
       M5.dis.drawpix(0, 0x00FF00);
       Serial.println("livre");
-      client.publish("feup/dei/secretaria", "sadasd");
+
+      char buffer[256];
+      DynamicJsonDocument doc(1024);
+
+      doc["desk"] = 1;
+      doc["sensor"]   = "Free";
+
+      serializeJson(doc, buffer);
+
+      client.publish("feup/dei/secretaria", buffer);
     }
 
     delay(1000);
