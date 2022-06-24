@@ -86,6 +86,19 @@ body {
     font-weight: bold;
 }
 
+.estado_yellow {
+    width: 50%;
+    height: 35%;
+    line-height: 70px;
+    background-color: rgb(255, 238, 0);
+    padding: 3px;
+    margin: 5px;
+    border-radius: 10px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .estado_grey {
     width: 50%;
     height: 35%;
