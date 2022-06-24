@@ -9,7 +9,8 @@
 #include <relevants.h>
 
 //
-int counter = 0;
+int counter = 1;
+bool first = true;
 bool isFree = true;
 bool isAway = false;
 
@@ -153,6 +154,22 @@ void loop () {
             counter++;
         } else if (trigger == 0 && counter > 0) {
             counter--;
+        }
+
+        if (first) {
+            if (counter == 5) {
+                M5.dis.drawpix(0, UNAVAILABLE_COLOR);
+                Serial.println("ocupado");
+                publish(UNAVAILABLE);
+                isFree = false;
+            }
+            if (counter == 0) {
+                M5.dis.drawpix(0, FREE_COLOR);
+                Serial.println("livre");
+                publish(FREE);
+                isFree = true;
+            }
+            first = false;
         }
 
         if (counter == 5 && isFree) {
