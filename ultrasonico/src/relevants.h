@@ -3,8 +3,8 @@
 
 #define TABLE_NUMBER 1
 
-#define SSID "tiago"
-#define PASS "12345678ti"
+#define SSID "iPhone de Henrique"
+#define PASS "henrique"
 #define BROKER "broker.mqttdashboard.com"
 #define PORT 1883
 

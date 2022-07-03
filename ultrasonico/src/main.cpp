@@ -135,7 +135,7 @@ void loop () {
     } else if (M5.Btn.wasPressed() && isAway) {
         M5.dis.drawpix(0, UNAVAILABLE_COLOR);
         isAway = false;
-        publish(UNAVAILABLE);
+        publish(FREE);
     }
 
     
