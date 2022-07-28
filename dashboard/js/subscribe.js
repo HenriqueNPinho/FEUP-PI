@@ -1,5 +1,5 @@
-mqtt_server = "broker.hivemq.com";
-mqtt_port = 8000;
+mqtt_server = "localhost";
+mqtt_port = 9001;
 mqtt_destname = "feup/dei/secretaria";
 const clientID = "web" + new Date().getTime();
 
@@ -40,6 +40,7 @@ function sub_mqtt_msg() {
 }
 
 function onConnect() {
+  console.log("Conectado");
   client.subscribe(mqtt_destname);
   // document.getElementById("submsg").innerHTML = "New connection made...";
   // document.getElementById("submsg").innerHTML = "Subscribing to topic: " + mqtt_destname + " ...";
