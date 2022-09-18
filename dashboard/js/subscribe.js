@@ -35,7 +35,7 @@ function sub_mqtt_msg() {
   console.log(clientID);
   client.onMessageArrived = onMessageArrived;
   client.onMessageArrived = onMessageArrived;
-  client.connect({ onSuccess: onConnect });
+  client.connect({ onSuccess: onConnect, onFailure : onFailure });
   // document.getElementById("submsg").innerHTML = "Trying to connect...";
 }
 
@@ -52,4 +52,8 @@ function onMessageArrived(message) {
   console.log(mqtt_destname);
   console.log(message.payloadString.toString());
   renderLeic(message.payloadString.toString());
+}
+
+function onFailure(response) {
+  console.log(response);
 }
